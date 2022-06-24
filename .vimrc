@@ -23,8 +23,8 @@ nnoremap ww :w<Return>
 nnoremap qq :wq<Return>
 nnoremap q1 :q<Return>
 nnoremap ff :CocAction<Return>
-nnoremap { }
-nnoremap } {
+nnoremap <Leader>o o<Esc>0"_D
+nnoremap <Leader>O O<Esc>0"_D
 map <c-p> :Files<Return>
 map <c-f> :Rg<Return>
 map <c-n> :NERDTreeToggle<CR>
@@ -32,20 +32,12 @@ map <s-h> :bprev<Return>
 map <s-l> :bnext<Return>
 map <s-d> :bdel<Return>
 
+" Set the UI to look how I prefer
 colorscheme gruvbox-material
 let g:gruvbox_material_sign_column_background = 'none'
-
-" Start NERDTree and leave the cursor in it.
-"autocmd VimEnter * NERDTree | wincmd p
-
 let g:airline#extensions#tabline#enabled = 1
 
-" Linter configuration
-let g:ale_linters = {
-  \   'javascript': ['eslint'],
-  \   'typescript': ['eslint'],
-  \}
-
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
