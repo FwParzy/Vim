@@ -33,7 +33,12 @@ map <s-l> :bnext<Return>
 map <s-d> :bdel<Return>
 
 " Set the UI to look how I prefer
+if has('termguicolors')
+  set termguicolors
+endif
+set background=dark
 colorscheme gruvbox-material
+let g:airline_theme = 'gruvbox_material'
 let g:gruvbox_material_sign_column_background = 'none'
 let g:airline#extensions#tabline#enabled = 1
 
