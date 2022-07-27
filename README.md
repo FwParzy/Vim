@@ -14,6 +14,7 @@ Should be good? idk been a while since i set it up. Will add extra steps for mor
 
 To Install NeoVim :  
 brew install neovim  
-ln -s MyVim/init.vim ~/.config/nvim/init.vim
-:PlugInstall
-:source init.vim // might need to do this 2 times for gruvbox
+cd ~/.config/nvim  
+ln -s ../../MyVim/init.vim init.vim  
+:PlugInstall  
+:source $MYVIMRC // might need to do this 2 times for gruvbox  
