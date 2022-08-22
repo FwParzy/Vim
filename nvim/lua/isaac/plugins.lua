@@ -53,6 +53,10 @@ return packer.startup(function(use)
   -- Looks
   use "akinsho/bufferline.nvim" -- Shows Buffers in top
   use "moll/vim-bbye" -- Custom Buffer commands -- Bdelete
+  use {
+  'nvim-lualine/lualine.nvim',
+  requires = { 'kyazdani42/nvim-web-devicons', opt = true } -- lualine is a status line for the bottom.
+}
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
