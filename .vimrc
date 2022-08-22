@@ -1,14 +1,31 @@
 call plug#begin()
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" fuzzyfinder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+
+" git
 Plug 'airblade/vim-gitgutter'
+
+" status bar
+Plug 'vim-airline/vim-airline'
+
+" colors
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'sainnhe/gruvbox-material'
-Plug 'preservim/nerdtree'
-Plug 'leafgarland/typescript-vim'
+Plug 'vim-airline/vim-airline-themes'
+
+" syntax
+Plug 'leafgarland/typescriptvim'
+Plug 'ap/vim-css-color'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'sheerun/vim-polyglot'
+Plug 'uiiaoo/java-syntax.vim'
+
+" autocomplete
 Plug 'prettier/vim-prettier'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 call plug#end()
 
@@ -35,21 +52,40 @@ map <s-l> :bnext<Return>
 map <s-d> :bdel<Return>
 
 " Set the UI to look how I prefer on WINDOWS, disable on mac
-" if has('termguicolors')
-"   set termguicolors
-" endif
-" set background=dark
-colorscheme gruvbox-material
-let g:airline_theme = 'gruvbox_material'
+if has('termguicolors')
+  set termguicolors
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+" Enable Italics Tmux
+highlight Comment cterm=italic
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+
+" colorscheme gruvbox-material
+set background=dark
+colorscheme dracula
+let g:airline_theme = 'dracula'
 let g:gruvbox_material_sign_column_background = 'none'
 let g:airline#extensions#tabline#enabled = 1
 
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
 endif
+
+augroup VimCSS3Syntax
+    autocmd!
+
+      autocmd FileType css setlocal iskeyword+=-
+    augroup END
+
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
