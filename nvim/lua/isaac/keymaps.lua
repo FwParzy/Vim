@@ -20,6 +20,7 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 keymap("n", "<leader>f", ":Format<cr>", opts)
+keymap("n", "<leader>sv", ":source$MYVIMRC<cr>", opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -42,7 +43,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
---[[ keymap("n", "<leader><S-D>", ":bd<CR>", opts) ]]
+keymap("n", "<leader><S-D>", ":bd<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter

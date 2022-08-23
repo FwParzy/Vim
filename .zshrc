@@ -27,13 +27,12 @@ source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 bindkey '^ ' autosuggest-accept
 
-alias tmux="env TERM=screen-256color tmux"
-
-alias zshrc="vim ~/.zshrc"
+alias zshrc="nvim ~/.zshrc"
 alias szshrc="source ~/.zshrc"
 
+alias nvimrc="nvim ~/.config/nvim/"
+
 alias vimrc="vim ~/.vimrc"
-alias svimrc="source ~/.vimrc"
 
 alias gpod="git pull origin develop"
 
@@ -63,3 +62,4 @@ function smile() {
 }
 
 source $ZSH/oh-my-zsh.sh
+export TERM=xterm-256color
