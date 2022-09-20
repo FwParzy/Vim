@@ -79,12 +79,14 @@ return packer.startup(function(use)
 
   -- Treesitter
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", }
+  use "nvim-treesitter/nvim-treesitter-context"
   use "p00f/nvim-ts-rainbow" -- Rainbow brackets for nesting
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- Text QOL changes
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
+  use "phaazon/hop.nvim" -- Adds highlighting for unique chars when pressing f or F
 
   -- Git
   use "lewis6991/gitsigns.nvim" -- The lil lefthand markers for git
