@@ -6,7 +6,7 @@ end
 bufferline.setup({
   options = {
     numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
-    indicator_icon = "▎",
+    indicator = "▎",
     buffer_close_icon = "",
     modified_icon = "●",
     close_icon = "",
