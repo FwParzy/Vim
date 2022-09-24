@@ -70,7 +70,7 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "jose-elias-alvarez/null-ls.nvim" --for formatters and linters
+  use({ "jose-elias-alvarez/null-ls.nvim", commit = "ff40739e5be6581899b43385997e39eecdbf9465" }) -- for formatters and linters
   use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons", } -- Better lsp diagnostics
 
   -- Telescope
