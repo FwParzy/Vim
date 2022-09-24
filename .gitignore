@@ -2,3 +2,4 @@
 *.swp
 *.swo
 nvim/plugin/*
+plugin/*
