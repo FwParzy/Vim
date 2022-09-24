@@ -20,7 +20,7 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 keymap("n", "<leader>f", ":Format<cr>", opts)
-keymap("n", "<leader>sv", ":source$MYVIMRC<cr>", opts)
+keymap("n", "<leader>sv", ":source $MYVIMRC<cr>", opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -32,7 +32,7 @@ keymap("n", "<leader>e", ":NvimTreeOpen<cr>", opts)
 
 keymap("n", "ww", ":w<CR>", opts)
 keymap("n", "qq", ":wqa<CR>", opts)
-keymap("n", "q1", ":qa!<CR>", opts)
+keymap("n", "q1", ":q!<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -44,6 +44,9 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader><S-D>", ":bd<CR>", opts)
+
+ -- Makrdown preview
+keymap("n", "<leader>v", ":Glow<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter
