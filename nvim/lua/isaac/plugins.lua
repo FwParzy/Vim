@@ -98,6 +98,9 @@ return packer.startup(function(use)
   use "akinsho/toggleterm.nvim"
   use "ellisonleao/glow.nvim"
 
+  -- Personal wiki page and note taking
+  use "vimwiki/vimwiki"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

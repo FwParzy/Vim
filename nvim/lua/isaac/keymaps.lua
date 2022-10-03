@@ -31,7 +31,7 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<leader>e", ":NvimTreeOpen<cr>", opts)
 
 keymap("n", "ww", ":w<CR>", opts)
-keymap("n", "qq", ":wqa<CR>", opts)
+keymap("n", "qq", ":qa<CR>", opts)
 keymap("n", "q1", ":q!<CR>", opts)
 
 -- Resize with arrows
