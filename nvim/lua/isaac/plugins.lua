@@ -99,7 +99,19 @@ return packer.startup(function(use)
   use "ellisonleao/glow.nvim"
 
   -- Personal wiki page and note taking
-  use "vimwiki/vimwiki"
+  -- TODO FIX THIS SHIT
+  use { 'vimwiki/vimwiki',
+    config = function()
+        vim.g.vimwiki_global_ext = 0
+        vim.g.vimwiki_list = {
+            {
+                path = '~/vimwiki/',
+                syntax = 'markdown',
+                ext = '.md',
+            }
+        }
+    end
+}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

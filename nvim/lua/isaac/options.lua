@@ -44,3 +44,17 @@ end
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+
+-- Set cursorline to be off in insert moode
+local augroup = vim.api.nvim_create_augroup
+local autocmd = vim.api.nvim_create_autocmd
+
+local cursorGrp = augroup("CursorLine", { clear = true })
+autocmd(
+  { "InsertLeave", "WinEnter" },
+  { pattern = "*", command = "set cursorline", group = cursorGrp }
+)
+autocmd(
+  { "InsertEnter", "WinLeave" },
+  { pattern = "*", command = "set nocursorline", group = cursorGrp }
+)

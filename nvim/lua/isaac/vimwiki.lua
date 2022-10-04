@@ -1,15 +1,19 @@
-local status_ok, vimwiki = pcall(require, "vimwiki")
-if not status_ok then
-	return
-end
+-- You cannot require vimscript plugins currently with lua
 
-vimwiki.setup({
-  vim.g.vimwiki_list == ({
-    path = {'~/vimwiki/'},
-    syntax = {'markdown'},
-    ext = {'.md'},
-  })
-})
+--[[ local vimwiki = augroup("vimwiki_startup", { clear = true }) ]]
+--[[ autocmd( ]]
+--[[   { "VimEnter" }, ]]
+--[[   { command =  ]]
+--[[     vim.g.vimwiki_global_ext = 0 ]]
+--[[     vim.g.vimwiki_list = { ]]
+--[[       { ]]
+--[[         path = '~/vimwiki/', ]]
+--[[         syntax = 'markdown', ]]
+--[[         ext = '.md', ]]
+--[[       } ]]
+--[[     } ]]
+--[[   } ]]
+--[[ ) ]]
 
  --TODO map all of these properly :)
 
