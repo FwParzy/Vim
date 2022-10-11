@@ -33,7 +33,7 @@ nvim_tree.setup {
         },
         git = {
           unstaged = "",
-          staged = "S",
+          staged = "✓",
           unmerged = "",
           renamed = "➜",
           untracked = "U",
@@ -50,7 +50,7 @@ nvim_tree.setup {
       hint = "",
       info = "",
       warning = "",
-      error = "",
+      error = "✗",
     },
   },
   view = {

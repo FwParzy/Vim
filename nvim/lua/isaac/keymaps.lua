@@ -46,7 +46,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader><S-D>", ":bd<CR>", opts)
 
  -- Makrdown preview
-keymap("n", "<leader>v", ":Glow<CR>", opts)
+keymap("n", "<leader>md", ":Glow<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter

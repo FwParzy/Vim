@@ -56,7 +56,8 @@ return packer.startup(function(use)
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }} -- lualine is a status line for the bottom.
 
   -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
+  -- commit 0ad2450ff617a3568cc3f5e46f13635ef5185e6c 10/11/2022
+  use {"hrsh7th/nvim-cmp", commit = "0ad2450ff617a3568cc3f5e46f13635ef5185e6c"} -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
