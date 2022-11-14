@@ -25,4 +25,4 @@ Make sure Brew is installed before continuing.
    
 ## Other
 1. If nvim in tmux looks horrible you need to figure out how to enable *italics* for tmux and your perfered term
-
+1. We have to do some extra steps if neovim is installed inside wsl [clipboard fix](https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl) 

@@ -48,8 +48,11 @@ vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
 -- Set cursorline to be off in insert moode
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
+local fn = vim.fn
 
 local cursorGrp = augroup("CursorLine", { clear = true })
+local bufcheck = augroup("bufcheck", {clear = true})
+
 autocmd({ "InsertLeave", "WinEnter" }, { pattern = "*", command = "set cursorline", group = cursorGrp })
 autocmd({ "InsertEnter", "WinLeave" }, { pattern = "*", command = "set nocursorline", group = cursorGrp })
 
@@ -59,3 +62,37 @@ autocmd(
   { pattern = { "help", "startuptime", "qf", "lspinfo", "nvim-tree" }, command = [[nnoremap <buffer><silent> q :close<CR>]] }
 )
 autocmd("FileType", { pattern = "man", command = [[nnoremap <buffer><silent> q :quit<CR>]] })
+
+-- Restore last curson position upon reopen
+autocmd('BufReadPost',  {
+    group    = 'bufcheck',
+    pattern  = '*',
+    callback = function()
+      if fn.line("'\"") > 0 and fn.line("'\"") <= fn.line("$") then
+         fn.setpos('.', fn.getpos("'\""))
+         vim.api.nvim_feedkeys('zz', 'n', true)
+         end end })
+
+-- Set vimwiki to markdown
+autocmd({ 'FileType', 'BufNewFile' }, {
+  group = 'bufcheck',
+  pattern = 'vimwiki',
+  command = 'set filetype=markdown',
+})
+
+-- Strip trailing whitespaces on save
+
+-- StripTrailingWhitespace()
+   -- Only strip if the b:noStripeWhitespace variable isn't set
+--  if exists('noStripWhitespace') then
+--      return
+--else
+--autocmd(
+--  "BufWritePre",
+--  { pattern = "*", command = "%s/\\s\\+$//e" }
+--)
+--end
+
+-- autocmd('BufWritePre', { pattern = "*", callback = StripTrailingWhitespace()})
+-- autocmd('FileType', { pattern = 'markdown', command = 'let noStripWhitespace=1000'})
+
