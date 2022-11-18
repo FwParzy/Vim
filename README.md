@@ -25,4 +25,12 @@ Make sure Brew is installed before continuing.
    
 ## Other
 1. If nvim in tmux looks horrible you need to figure out how to enable *italics* for tmux and your perfered term
-1. We have to do some extra steps if neovim is installed inside wsl [clipboard fix](https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl) 
+1. We have to do some extra steps if neovim is installed inside wsl [clipboard fix](https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl)   
+  
+  
+| Class Name                    | DAYS | Time              | Date        |
+| ----------------------------- | ---- | ----------------- | ----------- |
+| Internet Software Development | MW   | 05:30 pm-08:20 pm | 03/13-05/04 |
+| Systems Analysis and Design   | TR   | 01:00 pm-02:15 pm | 01/17-05/04 |
+| Comp Sci 2                    | MW   | 01:30 pm-03:15 pm | 01/17-05/04 |
+| ASSEMBLY & COMPUTER ORG       | MW   | 08:00 am-09:15 am | 01/17-05/04 | 
