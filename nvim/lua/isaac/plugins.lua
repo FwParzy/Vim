@@ -67,6 +67,9 @@ return packer.startup(function(use)
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to used
+  use "SirVer/ultisnips"
+  use "quangnguyen30192/cmp-nvim-ultisnips"
+  use "cristianoliveira/vim-react-html-snippets"
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP

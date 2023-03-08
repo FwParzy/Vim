@@ -19,7 +19,7 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
-keymap("n", "<leader>f", ":Format<cr>", opts)
+keymap("n", "<leader>f", ":lua vim.lsp.buf.format{async=true}<cr>", opts)
 keymap("n", "<leader>sv", ":source $MYVIMRC<cr>", opts)
 
 -- Better window navigation
@@ -56,6 +56,7 @@ keymap("n", "<leader>vv", ":VimwikiIndex<CR>", opts)
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+keymap("i", "<C-o>", "<ESC>o", opts)
 
 -- Visual --
 -- Stay in indent mode
