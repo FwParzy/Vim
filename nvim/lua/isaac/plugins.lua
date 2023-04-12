@@ -49,11 +49,13 @@ return packer.startup(function(use)
   -- Colorschemes
   use "ellisonleao/gruvbox.nvim"
   use "Mofiqul/dracula.nvim"
+  use "tckmn/hotdog.vim"
 
   -- Looks
   use "akinsho/bufferline.nvim" -- Shows Buffers in top
   use "moll/vim-bbye" -- Custom Buffer commands -- Bdelete
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true }} -- lualine is a status line for the bottom.
+  use "norcalli/nvim-colorizer.lua"
 
   -- cmp plugins
   -- commit 0ad2450ff617a3568cc3f5e46f13635ef5185e6c 10/11/2022
@@ -72,10 +74,15 @@ return packer.startup(function(use)
   use "cristianoliveira/vim-react-html-snippets"
 
   -- LSP
+  -- use "williamboman/nvim-lsp-installer"
   use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
   use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons", } -- Better lsp diagnostics
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
+  use 'mfussenegger/nvim-dap'
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  use "folke/neodev.nvim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -84,6 +91,7 @@ return packer.startup(function(use)
   -- Treesitter
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", }
   use "nvim-treesitter/nvim-treesitter-context"
+  use "nvim-treesitter/nvim-treesitter-textobjects"
   use "p00f/nvim-ts-rainbow" -- Rainbow brackets for nesting
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
@@ -91,6 +99,7 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "phaazon/hop.nvim" -- Adds highlighting for unique chars when pressing f or F
+  use "kylechui/nvim-surround" -- surround commands so you dont have to delete things to put them in paren
 
   -- Git
   use "lewis6991/gitsigns.nvim" -- The lil lefthand markers for git
@@ -101,21 +110,12 @@ return packer.startup(function(use)
   -- Terms inside nvim
   use "akinsho/toggleterm.nvim"
   use "ellisonleao/glow.nvim"
+  use "Vigemus/iron.nvim"
 
   -- Personal wiki page and note taking
-  -- TODO FIX THIS SHIT
-  use { 'vimwiki/vimwiki',
-    config = function()
-        vim.g.vimwiki_global_ext = 0
-        vim.g.vimwiki_list = {
-            {
-                path = '~/vimwiki/',
-                syntax = 'markdown',
-                ext = '.md',
-            }
-        }
-    end
-}
+  use { 'vimwiki/vimwiki' }
+  -- Personal fun
+  use "seandewar/killersheep.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
