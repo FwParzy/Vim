@@ -13,7 +13,7 @@ lsp_installer.setup({
 for _, server in pairs(servers) do
 	local opts = {
 		on_attach = require("isaac.lsp.handlers").on_attach,
-    capabilities = require("isaac.lsp.handlers").capabilities,
+		capabilities = require("isaac.lsp.handlers").capabilities,
 	}
 	local has_custom_opts, server_custom_opts = pcall(require, "isaac.lsp.settings." .. server)
 	if has_custom_opts then

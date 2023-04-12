@@ -37,7 +37,6 @@ keymap("n", "<leader>o", "o<ESC>0", opts)
 keymap("n", "<leader>O", "O<ESC>0", opts)
 keymap("n", "<leader>rn", ":set invrelativenumber<CR>", opts)
 
-
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -49,7 +48,7 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader><S-D>", ":bd<CR>", opts)
 
- -- Makrdown preview
+-- Makrdown preview
 keymap("n", "<leader>md", ":Glow<CR>", opts)
 keymap("n", "<leader>vv", ":VimwikiIndex<CR>", opts)
 
