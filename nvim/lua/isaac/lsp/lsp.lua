@@ -1,6 +1,6 @@
 local status_ok, lspconfig = pcall(require, "lspconfig")
 if not status_ok then
-  return
+	return
 end
 
 local servers = {
@@ -15,48 +15,48 @@ local servers = {
 	"pyright",
 }
 
-  local signs = {
-    { name = "DiagnosticSignError", text = "" },
-    { name = "DiagnosticSignWarn", text = "" },
-    { name = "DiagnosticSignHint", text = "" },
-    { name = "DiagnosticSignInfo", text = "" },
-  }
+local signs = {
+	{ name = "DiagnosticSignError", text = "" },
+	{ name = "DiagnosticSignWarn", text = "" },
+	{ name = "DiagnosticSignHint", text = "" },
+	{ name = "DiagnosticSignInfo", text = "" },
+}
 
-  for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-  end
+for _, sign in ipairs(signs) do
+	vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+end
 
-  local config = ({
-    -- disable virtual text
-    virtual_text = false,
-    -- show signs
-    signs = {
-      active = signs,
-    },
-    update_in_insert = true,
-    underline = true,
-    severity_sort = true,
-    float = {
-      focusable = false,
-      style = "minimal",
-      border = "rounded",
-      source = "always",
-      header = "",
-      prefix = "",
-    },
-  })
+local config = {
+	-- disable virtual text
+	virtual_text = false,
+	-- show signs
+	signs = {
+		active = signs,
+	},
+	update_in_insert = true,
+	underline = true,
+	severity_sort = true,
+	float = {
+		focusable = false,
+		style = "minimal",
+		border = "rounded",
+		source = "always",
+		header = "",
+		prefix = "",
+	},
+}
 
-  vim.diagnostic.config(config)
+vim.diagnostic.config(config)
 
-  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "rounded",
-    width = 60,
-  })
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+	border = "rounded",
+	width = 60,
+})
 
-  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-    border = "rounded",
-    width = 60,
-  })
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+	border = "rounded",
+	width = 60,
+})
 
 local function lsp_highlight_document(client)
 	-- Set autocommands conditional on server_capabilities
@@ -103,13 +103,13 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 for _, server in ipairs(servers) do
-  local lspOpts = {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
-  local has_custom_opts, server_custom_opts = pcall(require, "isaac.lsp.settings." .. server)
-  if has_custom_opts then
-    lspOpts = vim.tbl_deep_extend("force", lspOpts, server_custom_opts)
-  end
-  lspconfig[server].setup(lspOpts)
+	local lspOpts = {
+		on_attach = on_attach,
+		capabilities = capabilities,
+	}
+	local has_custom_opts, server_custom_opts = pcall(require, "isaac.lsp.settings." .. server)
+	if has_custom_opts then
+		lspOpts = vim.tbl_deep_extend("force", lspOpts, server_custom_opts)
+	end
+	lspconfig[server].setup(lspOpts)
 end

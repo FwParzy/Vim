@@ -10,7 +10,7 @@ local diagnostics = null_ls.builtins.diagnostics
 -- these are the installed formatters and diagnostics
 local required_executables = {
 	"prettier",
-  "jdtls",
+	"jdtls",
 	"black",
 	"stylua",
 	"google-java-format",
@@ -44,7 +44,7 @@ null_ls.setup({
 		diagnostics.semgrep.with({
 			extra_args = { "--config", "auto" },
 			condition = function()
-        local bufname = vim.api.nvim_buf_get_name(0)
+				local bufname = vim.api.nvim_buf_get_name(0)
 				return file_exists(bufname)
 			end,
 		}),

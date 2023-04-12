@@ -33,7 +33,6 @@ M.setup = function()
 		},
 	}
 
-
 	vim.diagnostic.config(config)
 
 	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
@@ -88,7 +87,7 @@ M.on_attach = function(client, bufnr)
 		client.server_capabilities.document_formatting = false
 	end
 	if client.name == "jdtls" then
-	  client.server_capabilities.document_formatting = false
+		client.server_capabilities.document_formatting = false
 	end
 	if client.name == "sumneko_lua" then
 		client.server_capabilities.document_formatting = false
