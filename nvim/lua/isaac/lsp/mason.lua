@@ -1,11 +1,11 @@
 local status_ok, mason = pcall(require, "mason")
 if not status_ok then
-  return
+	return
 end
 
 local status_masonlsp_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
 if not status_masonlsp_ok then
-  return
+	return
 end
 
 require("mason").setup()
