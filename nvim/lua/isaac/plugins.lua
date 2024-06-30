@@ -82,6 +82,9 @@ return packer.startup(function(use)
 	use("williamboman/mason-lspconfig.nvim")
 	use("mfussenegger/nvim-dap")
 	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+	use({ "leoluz/nvim-dap-go" })
+  use({'nvim-telescope/telescope-dap.nvim'})
+  use({'theHamsta/nvim-dap-virtual-text'})
 	use("folke/neodev.nvim")
 
 	-- Telescope

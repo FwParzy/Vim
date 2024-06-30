@@ -68,3 +68,16 @@ local python = Terminal:new({ cmd = "python", hidden = true })
 function _PYTHON_TOGGLE()
 	python:toggle()
 end
+
+local right_split_term = Terminal:new({
+  cmd = vim.o.shell,
+  direction = "vertical",
+  size = 60,
+  hidden = true
+})
+
+function _RIGHT_SPLIT_TERM_TOGGLE()
+  right_split_term:toggle()
+end
+
+vim.api.nvim_set_keymap("n", "<C><leader>\\", "<cmd>lua _RIGHT_SPLIT_TERM_TOGGLE()<CR>", {noremap = true, silent = true})

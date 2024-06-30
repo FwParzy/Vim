@@ -24,5 +24,6 @@ require("isaac.colorizer")
 require("isaac.killerSheep")
 require("isaac.surround")
 require("isaac.neodev")
+require("isaac.dap")
 -- Fix the br snippet jsx
 -- Fix LSP fucking up when split screening jsx and scss

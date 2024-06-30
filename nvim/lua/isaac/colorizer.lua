@@ -8,6 +8,8 @@ colorizer.setup({
 	scss = { css = true }, -- Apply the 'css' setting for 'scss' files.
 	css = { rgb_fn = true }, -- Enable parsing rgb(...) functions in css.
 	html = { names = false }, -- Disable parsing "names" like Blue or Gray
+	java = { names = false }, -- Disable parsing "names" like Blue or Gray
+	lua = { names = false }, -- Disable parsing "names" like Blue or Gray
 })
 
 --[[

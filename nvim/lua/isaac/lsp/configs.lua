@@ -1,11 +1,11 @@
-local status_ok, lsp_installer = pcall(require, "lspconfig")
+local status_ok, lspconfig = pcall(require, "lspconfig")
 if not status_ok then
 	return
 end
 
 local servers = { "jsonls", "sumneko_lua", "tsserver", "jdtls", "sqlls", "html", "cssls", "pyright", "asm_lsp" }
 
-lsp_installer.setup({
+lspconfig.setup({
 	ensure_installed = servers,
 	automatic_installation = true,
 })
